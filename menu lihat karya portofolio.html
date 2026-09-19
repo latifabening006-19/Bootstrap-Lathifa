@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Diri - Portofolio Siswa</title>
+    <!-- Menghubungkan ke file CSS eksternal -->
+    <link rel="stylesheet" href="lathifa.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- HEADER PROFILE -->
+        <header class="header">
+            <div class="avatar-box">👤</div>
+            <h1 id="nama-user">Lathifa Bening Azzahro</h1>
+            <p id="jurusan-user">Teknik Komputer Jaringan</p>
+            
+            <div class="badge-container">
+                <span class="badge" id="absen-user">No. Absen: 02</span>
+                <span class="badge">Kelas: XI TKJ 2</span>
+            </div>
+        </header>
+
+        <!-- KONTEN UTAMA (INFORMASI PROFIL) -->
+        <main class="content">
+            
+            <!-- TENTANG SAYA -->
+            <section class="card">
+                <h2 class="card-title">📌 Tentang Saya</h2>
+                <p class="card-content" id="tentang-user">
+                    Halo! Saya Lathifa saya suka belajar hal-hal baru, terutama yang berhubungan dengan teknologi dan jaringan komputer. Saya senang mencoba tantangan baru, terus mengembangkan kemampuan, dan selalu berusaha menjadi pribadi yang lebih baik setiap harinya. 
+                </p>
+            </section>
+
+            <!-- RIWAYAT PENDIDIKAN -->
+            <section class="card">
+                <h2 class="card-title">🎓 Riwayat Pendidikan</h2>
+                <ul class="card-content" style="padding: 0;" id="pendidikan-list">
+                    <!-- Dimuat via JavaScript -->
+                </ul>
+            </section>
+
+            <!-- CITA-CITA -->
+            <section class="card">
+                <h2 class="card-title">🚀 Cita-Cita</h2>
+                <p class="card-content">Impian dan sasaran karir masa depan saya yakni menjadi seorang yang sukses dan berguna.</p>
+                <div class="tag-group" id="citacita-tags">
+                    <!-- Dimuat via JavaScript -->
+                </div>
+            </section>
+
+            <!-- HOBI -->
+            <section class="card">
+                <h2 class="card-title">🎨 Hobi & Minat</h2>
+                <p class="card-content">Kegiatan favorit yang biasa saya lakukan di waktu senggang yakni mendengarkan musik.</p>
+                <div class="tag-group" id="hobi-tags">
+                    <!-- Dimuat via JavaScript -->
+                </div>
+            </section>
+
+            <!-- INTERAKSI EVENT JAVASCRIPT -->
+            <div class="action-area">
+                <button class="btn" onclick="tampilkanPesanKhusus()">✨ Klik untuk Pesan Motivasi</button>
+                <div id="interactive-message" class="interactive-box"></div>
+            </div>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            &copy; 2026 Proyek - Dibuat oleh Lathifa Bening Azzahro
+        </footer>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        const dataProfil = {
+            nama: "Lathifa Bening Azzahro",
+            absen: "02",
+            tentang: "Saya adalah siswa yang berdedikasi tinggi dalam bidang pemrograman web dan pengembangan perangkat lunak.",
+            pendidikan: [
+                { sekolah: "SMK Negeri 1 Kota Blitar", tahun: "2025 - Sekarang" },
+                { sekolah: "SMP Negeri 2 Kota Blitar", tahun: "2022 - 2025" },
+                { sekolah: "SD Negeri Posokerep 2 Kota Blitar", tahun: "2016 - 2022" }
+            ],
+            citaCita: ["Guru"],
+            hobi: [ "Mendengarkan Musik", "Desain Grafis"]
+        };
+
+        function muatDataPendidikan() {
+            const containerList = document.getElementById("pendidikan-list");
+            containerList.innerHTML = "";
+            dataProfil.pendidikan.forEach(item => {
+                const li = document.createElement("li");
+                li.className = "list-item";
+                li.innerHTML = `<strong>${item.sekolah}</strong><span class="edu-year">${item.tahun}</span>`;
+                containerList.appendChild(li);
+            });
+        }
+
+        function muatTags() {
+            const containerCita = document.getElementById("citacita-tags");
+            const containerHobi = document.getElementById("hobi-tags");
+
+            dataProfil.citaCita.forEach(cita => {
+                const span = document.createElement("span");
+                span.className = "tag";
+                span.innerText = "⭐ " + cita;
+                containerCita.appendChild(span);
+            });
+
+            dataProfil.hobi.forEach(hobi => {
+                const span = document.createElement("span");
+                span.className = "tag";
+                span.innerText = "🎯 " + hobi;
+                containerHobi.appendChild(span);
+            });
+        }
+
+        function tampilkanPesanKhusus() {
+            const box = document.getElementById("interactive-message");
+            const pesanMotivasi = [
+                "\"Masa depan adalah milik mereka yang menyiapkan hari ini.\" - Soekarno",
+                "\"Teknologi bukan hanya alat, tetapi seni memecahkan masalah.\"",
+                "\"Jangan takut gagal, takutlah jika tidak pernah mencoba sesuatu yang baru!\""
+            ];
+            const indexAcak = Math.floor(Math.random() * pesanMotivasi.length);
+            box.style.display = "block";
+            box.innerHTML = `<p style="font-style: italic; color: #ff85e8;">${pesanMotivasi[indexAcak]}</p>`;
+        }
+
+        window.onload = function() {
+            muatDataPendidikan();
+            muatTags();
+        };
+    </script>
+</body>
+</html>

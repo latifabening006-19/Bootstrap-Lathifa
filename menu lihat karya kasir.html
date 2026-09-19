@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplikasi Kasir Sederhana</title>
+  <link rel="stylesheet" href="lat.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Aplikasi Kasir</h2>
+    
+    <form id="kasirForm">
+      <div class="form-group">
+        <label for="namaPembeli">Nama Pembeli</label>
+        <input type="text" id="namaPembeli" placeholder="Masukkan nama pembeli" required>
+      </div>
+
+      <div class="form-group">
+        <label for="namaBarang">Nama Barang</label>
+        <input type="text" id="namaBarang" placeholder="Masukkan nama barang" required>
+      </div>
+
+      <div class="form-group">
+        <label for="hargaBarang">Harga Barang (Rp)</label>
+        <input type="number" id="hargaBarang" placeholder="Masukkan harga barang" min="0" required>
+      </div>
+
+      <div class="form-group">
+        <label for="jumlahBarang">Jumlah Barang</label>
+        <input type="number" id="jumlahBarang" placeholder="Masukkan jumlah barang" min="1" required>
+      </div>
+
+      <button type="button" id="btnHitung">Hitung</button>
+    </form>
+
+    <div id="outputContainer" class="output-card hidden">
+      <h3>Struk Pembayaran</h3>
+      <hr>
+      <p><span>Nama Pembeli</span> <strong id="outNamaPembeli">-</strong></p>
+      <p><span>Barang</span> <strong id="outNamaBarang">-</strong></p>
+      <p><span>Subtotal</span> <strong id="outSubtotal">Rp0</strong></p>
+      <p><span>Diskon</span> <strong id="outDiskon">Rp0</strong></p>
+      <hr>
+      <p class="total"><span>Total Bayar</span> <strong id="outTotalBayar">Rp0</strong></p>
+    </div>
+  </div>
+
+  <script src="lat.js"></script>
+</body>
+</html>

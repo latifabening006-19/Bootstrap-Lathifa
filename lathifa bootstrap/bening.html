@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Pelajar - Modern</title>
+  <link rel="stylesheet" href="bening.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Library EmailJS untuk Pengiriman Email Beneran -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+
+  <!-- Header & Navigasi Floating -->
+  <header>
+    <nav class="navbar">
+      <a href="#home" class="logo"><i class="fas fa-graduation-cap"></i> My<span>Porto</span></a>
+      
+      <ul class="nav-menu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About Me</a></li>
+        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li>
+          <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+            <i class="fas fa-moon" id="theme-icon"></i> <span id="theme-text">Mode</span>
+          </button>
+        </li>
+      </ul>
+
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Home / Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <span class="status-badge"><i class="fas fa-circle"></i> Student & Developer</span>
+        <h1>Portofolio <span class="gradient-text">Lathifa Bening Azzahro</span></h1>
+        <p>Selamat datang di portofolio digital saya! Tempat saya membagikan karya, proyek sekolah, dan minat saya dalam dunia teknologi.</p>
+        <div class="hero-actions">
+          <a href="#portfolio" class="btn btn-primary">Lihat Proyek <i class="fas fa-arrow-down"></i></a>
+          <a href="#about" class="btn btn-outline">Tentang Saya</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="profile-avatar">
+          <i class="fas fa-user-graduate"></i>
+        </div>
+        <div class="profile-info">
+          <h3>Siswa SMK NEGERI 1 BLITAR</h3>
+          <p>Pengembang Web Pemula</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="about">
+      <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+
+      <div class="about-grid">
+        <!-- Kartu Identitas Sekolah -->
+        <div class="about-card identity-card">
+          <div class="card-icon icon-orange"><i class="fas fa-school"></i></div>
+          <h3>Pendidikan</h3>
+          <ul class="info-list">
+            <li><strong>Sekolah:</strong> SMK NEGERI 1 BLITAR</li>
+            <li><strong>Kelas:</strong> XI TJKT 2</li>
+            <li><strong>Jurusan:</strong> Teknik Komputer Jaringan dan Telekomunikasi (TJKT)</li>
+          </ul>
+        </div>
+
+        <!-- Kartu Biodata & Deskripsi -->
+        <div class="about-card bio-card">
+          <div class="card-icon icon-pink"><i class="fas fa-id-card"></i></div>
+          <h3>Singkat Tentang Saya</h3>
+          <p>Saya seorang pelajar yang memiliki ketertarikan tinggi pada dunia pengembangan web dan desain antarmuka. Selain aktif di kelas, saya sering mengasah keterampilan dengan membangun proyek-proyek kecil.</p>
+        </div>
+
+        <!-- Kartu Hobi -->
+        <div class="about-card hobby-card">
+          <div class="card-icon icon-green"><i class="fas fa-gamepad"></i></div>
+          <h3>Hobi & Minat</h3>
+          <div class="hobby-tags">
+            <span class="hobby-tag"><i class="fas fa-laptop-code"></i> Coding</span>
+            <span class="hobby-tag"><i class="fas fa-book"></i> Membaca Novel</span>
+            <span class="hobby-tag"><i class="fas fa-music"></i> Dengar Musik</span>
+            <span class="hobby-tag"><i class="fas fa-camera"></i> Fotografi</span>
+          </div>
+        </div>
+
+        <!-- Kartu Skills -->
+        <div class="about-card skills-card">
+          <div class="card-icon icon-orange"><i class="fas fa-code"></i></div>
+          <h3>Keahlian Utamaku</h3>
+          <div class="skill-item">
+            <div class="skill-label"><span>HTML & CSS</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>JavaScript</span><span>75%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width: 75%;"></div></div>
+          </div>
+          <div class="skill-badges">
+            <span class="badge">Design</span>
+            <span class="badge">Git</span>
+            <span class="badge">Responsive Web</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+      <h2 class="section-title">My <span class="gradient-text">Projects</span></h2>
+      <div class="portfolio-grid">
+        
+        <!-- Karya 1: PPDB Sekolah -->
+        <div class="project-card">
+          <div class="project-banner bg-orange">
+            <i class="fas fa-school-flag"></i>
+          </div>
+          <div class="project-body">
+            <h3>Website PPDB Sekolah</h3>
+            <p>Proyek tugas untuk menampilkan proses pendaftaran murid baru.</p>
+            <a href="menu lihat karya ppdb.html" target="_blank" rel="noopener noreferrer" class="project-btn">
+              Lihat Karya <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Karya 2: Aplikasi Kasir -->
+        <div class="project-card">
+          <div class="project-banner bg-pink">
+            <i class="fas fa-calculator"></i>
+          </div>
+          <div class="project-body">
+            <h3>Aplikasi Kasir Sederhana</h3>
+            <p>Aplikasi berbasis web untuk pencatatan transaksi harian menggunakan JavaScript.</p>
+            <a href="menu lihat karya kasir.html" target="_blank" rel="noopener noreferrer" class="project-btn">
+              Lihat Karya <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Karya 3: Portofolio Digital -->
+        <div class="project-card">
+          <div class="project-banner bg-green">
+            <i class="fas fa-list-check"></i>
+          </div>
+          <div class="project-body">
+            <h3>Portofolio Digital</h3>
+            <p>Aplikasi berbasis web portofolio digital.</p>
+            <a href="menu lihat karya portofolio.html" target="_blank" rel="noopener noreferrer" class="project-btn">
+              Lihat Karya <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <h2 class="section-title">Contact <span class="gradient-text">Me</span></h2>
+      
+      <div class="contact-wrapper">
+        <!-- Informasi Kontak -->
+        <div class="contact-info-card">
+          <h3>Ayo Berdiskusi!</h3>
+          <p>Memiliki pertanyaan, penawaran proyek, atau ingin berteman? Silakan hubungi saya melalui formulir atau media sosial di bawah ini.</p>
+          
+          <div class="social-list">
+            <a href="https://wa.me/628814365500" target="_blank" rel="noopener noreferrer" class="social-btn">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://instagram.com/llathifazahra" target="_blank" rel="noopener noreferrer" class="social-btn">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Form Pesan dengan Atribut Name untuk Pengiriman Email -->
+        <form class="contact-form" id="contactForm">
+          <div class="input-group">
+            <input type="text" name="user_name" placeholder="Nama Anda" required>
+          </div>
+          <div class="input-group">
+            <input type="email" name="user_email" placeholder="Email Anda" required>
+          </div>
+          <div class="input-group">
+            <textarea name="message" placeholder="Pesan Anda..." rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Portofolio Saya. Dibuat dengan semangat belajar.</p>
+  </footer>
+
+  <script src="bening.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMK NEGERI 1 BLITAR - Portal Resmi</title>
+    <link rel="stylesheet" href="lathifa.css">
+</head>
+<body>
+
+    <!-- Header Portal Sekolah -->
+    <header>
+        <h1>SMK NEGERI 1 BLITAR</h1>
+        <p>Mencetak Generasi Unggul, Cerdas, dan Berkarakter</p>
+        <hr>
+    </header>
+
+    <!-- Informasi Utama / Hero Section -->
+    <section>
+        <h2>Selamat Datang di Portal Resmi SMKN 1 BLITAR</h2>
+        <p>Pendaftaran Peserta Didik Baru (PPDB) Tahun Ajaran Ini Resmi Dibuka!</p>
+        <hr>
+    </section>
+
+    <!-- Konten Utama: Profil, Jurusan, dan Form PPDB -->
+    <main>
+        <!-- Profil Sekolah -->
+        <article>
+            <h3>1. Tentang Sekolah Kami</h3>
+            <p>SMK NEGERI 1 BLITAR adalah sekolah berstandar nasional yang mengintegrasikan teknologi informasi dalam proses pembelajaran. Kami memiliki fasilitas laboratorium komputer, perpustakaan digital, serta sarana olahraga yang lengkap.</p>
+        </article>
+
+        <!-- Pilihan Jurusan -->
+        <article>
+            <h3>2. Pilihan Program Jurusan</h3>
+            <ul>
+                <li>TKJ (Teknik Komputer Jaringan)</li>
+                <li>TPM (Teknik Permesinan)</li>
+                <li>TKR (Teknik Kendaraan Ringan)</li>
+                <li>TITL (Teknik Instalasi Tenaga Listrik)</li>
+                <li>DPIB (Desain Permodelan dan Informasi Bangunan)</li>
+                <li>TKP (TekniK Kontruksi Perumahan)</li>
+                <li>TEI (Teknik Elektronika Industri)</li>
+                <li>TAV (Teknik Audio Vidio)</li>
+                <li>BC (Broadcast)</li>
+            </ul>
+        </article>
+
+        <!-- Form PPDB Online -->
+        <article>
+            <h3>3. Formulir Pendaftaran Siswa Baru (PPDB)</h3>
+            <form id="ppdbForm">
+                <p>
+                    <label for="nama">Nama Lengkap Calon Siswa:</label><br>
+                    <input type="text" id="nama" placeholder="Masukkan nama lengkap...">
+                </p>
+
+                <p>
+                    <label for="email">Email Orang Tua / Siswa:</label><br>
+                    <input type="email" id="email" placeholder="contoh@gmail.com">
+                </p>
+
+                <p>
+                    <label for="jurusan">Pilih Peminatan Jurusan:</label><br>
+                    <select id="jurusan">
+                        <option value="">-- Pilih Jurusan --</option>
+                        <option value="TKJ"> (Teknik Komputer Jaringan)</option>
+                        <option value="TPM"> (Teknik Permesinan)</option>
+                        <option value="TKR"> (Teknik Kendaraan Ringan)</option>
+                        <option value="TITL"> (Teknik Instalasi Tenaga Listrik)</option>
+                        <option value="DPIB"> (Desain Permodelan dan Informasi Bangunan)</option>
+                        <option value="TKP"> (Teknik Kontruksi Perumahan)</option>
+                        <option value="TEI"> (Teknik Elektronika Industri)</option>
+                        <option value="TAV"> (Teknik Audio Vidio)</option>
+                        <option value="BC"> (Broadcast)</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label>Jalur Pendaftaran:</label><br>
+                    <input type="radio" id="j1" name="jalur" value="Prestasi" checked>
+                    <label for="j1">Prestasi</label>
+                    <input type="radio" id="j2" name="jalur" value="Zonasi">
+                    <label for="j2">Zonasi</label>
+                     <input type="radio" id="j3" name="jalur" value="Afirmasi">
+                    <label for="j3">Afirmasi</label>
+                </p>
+                </p>
+
+                <p>
+                    <button type="button" onclick="daftarPPDB()">Kirim Pendaftaran</button>
+                    <button type="reset">Reset Form</button>
+                </p>
+            </form>
+        </article>
+    </main>
+
+    <hr>
+
+    <!-- Sidebar / Informasi Tambahan -->
+    <aside>
+        <!-- Pengumuman Singkat -->
+        <section>
+            <h3>Pengumuman Terbaru</h3>
+            <p><b>Penting:</b> Batas akhir verifikasi berkas pendaftaran adalah tanggal 25 bulan ini.</p>
+            <p><b>Ekstrakulikuler:</b> Pendaftaran Ekstrakulikuler Pramuka &amp; Coding dibuka minggu depan.</p>
+        </section>
+
+        <!-- Simulasi Biaya Seragam (Fitur Interaktif JS) -->
+        <section>
+            <h3>Simulasi Biaya Seragam</h3>
+            <p><small>Hitung perkiraan biaya seragam awal:</small></p>
+            
+            <p>
+                <label for="opsi-seragam">Pilih Paket Seragam:</label><br>
+                <select id="opsi-seragam" onchange="hitungSimulasiBiaya()">
+                    <option value="0">-- Pilih Paket --</option>
+                    <option value="450000">Paket Reguler (Rp 450.000)</option>
+                    <option value="650000">Paket Lengkap + Olahraga (Rp 650.000)</option>
+                </select>
+            </p>
+
+            <p>Perkiraan Biaya: <b id="total-biaya">Rp 0</b></p>
+        </section>
+
+        <!-- Kontak Sekolah -->
+        <section>
+            <h3>Kontak &amp; Alamat</h3>
+            <p><b>Alamat:</b> Jl. Kenari No. 30, Kota Blitar</p>
+            <p><b>Telepon:</b> (0342) 801947</p>
+            <p><b>Email:</b> info@smkn1blitar.sch.id</p>
+        </section>
+    </aside>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 SMK NEGERI 1 BLITAR - All Rights Reserved.</p>
+    </footer>
+
+    <!-- Logika Pemrograman JavaScript -->
+    <script>
+        // 1. Variabel Data Pendaftaran
+        let jumlahPendaftar = 0;
+
+        // 2. Function untuk Memproses Form PPDB
+        function daftarPPDB() {
+            const nama = document.getElementById("nama").value;
+            const email = document.getElementById("email").value;
+            const jurusan = document.getElementById("jurusan").value;
+            const jalur = document.querySelector('input[name="jalur"]:checked').value;
+
+            // Validasi Input Sederhana
+            if (nama.trim() === "" || email.trim() === "" || jurusan === "") {
+                alert("Harap lengkapi Nama, Email, dan Jurusan yang dipilih!");
+                return;
+            }
+
+            jumlahPendaftar++;
+            
+            // Notifikasi Pendaftaran Berhasil
+            alert("Pendaftaran Berhasil!\n" +
+                  "\nNo. Antrean: REG-00" + jumlahPendaftar +
+                  "\nNama: " + nama +
+                  "\nJurusan: " + jurusan +
+                  "\nJalur: " + jalur +
+                  "\n\nBukti pendaftaran telah dikirim ke " + email);
+
+            // Reset Form
+            document.getElementById("ppdbForm").reset();
+        }
+
+        // 3. Function untuk Kalkulator Simulasi Biaya
+        function hitungSimulasiBiaya() {
+            const harga = parseInt(document.getElementById("opsi-seragam").value);
+            document.getElementById("total-biaya").innerText = "Rp " + harga.toLocaleString();
+        }
+    </script>
+
+</body>
+</html>
