@@ -1,0 +1,230 @@
+/* =========================================================
+   1. RESET & GENERAL STYLES
+   ========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* Gradasi Latar Belakang: Ungu - Biru - Pink */
+    background: linear-gradient(135deg, #4b1248 0%, #1a2a6c 35%, #b21f1f 70%, #fdbb2d 100%);
+    background-attachment: fixed;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container utama dengan efek Glassmorphism */
+.container {
+    width: 100%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================================
+   2. HEADER SECTION (Gradasi Ungu - Biru - Pink)
+   ========================================================= */
+.header {
+    background: linear-gradient(135deg, #7b2cbf 0%, #3a86ff 50%, #ff007f 100%);
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+}
+
+.avatar-box {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: #7b2cbf;
+    border: 4px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header p {
+    font-size: 16px;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.badge-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.25);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* =========================================================
+   3. CONTENT LAYOUT (Grid & Flexbox)
+   ========================================================= */
+.content {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.14);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ff85e8;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 8px;
+}
+
+.card-content {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #e2e8f0;
+}
+
+/* List Styling */
+.list-item {
+    list-style: none;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.list-item::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #3a86ff;
+    font-size: 20px;
+    line-height: 1;
+}
+
+.edu-year {
+    font-size: 12px;
+    color: #a0aec0;
+    display: block;
+}
+
+/* Tag Badges untuk Hobi & Cita-Cita */
+.tag-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.tag {
+    background: linear-gradient(135deg, rgba(123, 44, 191, 0.6), rgba(255, 0, 127, 0.6));
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: 13px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Tombol Interaktif */
+.action-area {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btn {
+    background: linear-gradient(90deg, #ff007f 0%, #7b2cbf 50%, #3a86ff 100%);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 0, 127, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(58, 134, 255, 0.6);
+}
+
+.interactive-box {
+    margin-top: 15px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Tampilan Responsif (Mobile/HP) */
+@media (max-width: 600px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+    .header h1 {
+        font-size: 22px;
+    }
+}
